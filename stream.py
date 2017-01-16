@@ -22,7 +22,7 @@ def start_stream():
 			#Create stream listener and subsequently create stream
 			sl = SL()
 			stream = tweepy.Stream(auth=auth, listener=sl)
-			stream.filter(track=["@andrewEatonSim"])
+			stream.filter(track=["@drewlikesphish"])
 		except:
 			continue
 
@@ -35,6 +35,6 @@ auth.set_access_token(keys["c"], keys["d"])
 api = tweepy.API(auth)
 
 #Get a reference to @dethandrew
-user = api.get_user("@dethandrew")
+user = api.get_user("@drewlikesphish")
 
 start_stream()
