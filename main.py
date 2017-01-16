@@ -11,8 +11,8 @@ auth.set_access_token(keys["c"], keys["d"])
 #Create an api object
 api = tweepy.API(auth)
 
-#Get a reference to @dethandrew
-user = api.get_user("@dethandrew")
+#Get a reference to @drewlikesphish
+user = api.get_user("@drewlikesphish")
 
 #Populate the dictionary of prefixes and suffixes
 word_dict_prefix_one = populate_dictionary_prefix_one(api.user_timeline(id=user.id, count=5000))
