@@ -37,12 +37,7 @@ auth.set_access_token(keys["c"], keys["d"])
 #Create an api object
 api = tweepy.API(auth)
 
-<<<<<<< HEAD
 #Get a reference to user
 user = api.get_user(uID)
-=======
-#Get a reference to @dethandrew
-user = api.get_user("@drewlikesphish")
->>>>>>> 80577b1a084906235f6c53241221cb1d212c16dd
 
 start_stream()
