@@ -26,6 +26,8 @@ def start_stream():
 			sl = SL()
 			stream = tweepy.Stream(auth=auth, listener=sl)
 			stream.filter(track=["@andrewEatonSim"])
+		except KeyboardInterrupt:
+			break
 		except:
 			continue
 
