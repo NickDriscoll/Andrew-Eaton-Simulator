@@ -4,6 +4,9 @@ from methods import markov_prefix_length_one
 from methods import populate_dictionary_prefix_one
 from methods import populate_dictionary_prefix_two
 
+#Users id
+uID = 332088556
+
 #Define stream listener class
 class SL(tweepy.StreamListener):
 	def on_status(self, status):
@@ -34,7 +37,12 @@ auth.set_access_token(keys["c"], keys["d"])
 #Create an api object
 api = tweepy.API(auth)
 
+<<<<<<< HEAD
+#Get a reference to user
+user = api.get_user(uID)
+=======
 #Get a reference to @dethandrew
 user = api.get_user("@drewlikesphish")
+>>>>>>> 80577b1a084906235f6c53241221cb1d212c16dd
 
 start_stream()
