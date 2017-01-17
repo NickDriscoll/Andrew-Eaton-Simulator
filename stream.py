@@ -25,7 +25,7 @@ def start_stream():
 			#Create stream listener and subsequently create stream
 			sl = SL()
 			stream = tweepy.Stream(auth=auth, listener=sl)
-			stream.filter(track=["@drewlikesphish"])
+			stream.filter(track=["@andrewEatonSim"])
 		except:
 			continue
 
