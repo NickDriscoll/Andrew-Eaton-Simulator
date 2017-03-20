@@ -10,6 +10,12 @@ uID = 332088556
 #Define stream listener class
 class SL(tweepy.StreamListener):
 	def on_status(self, status):
+		#RATTLESNAKE RATTLESNAKE
+		if "rattlesnake" in status.text:
+			response = "@" + status.user.screen_name + " rattlesnake"
+			api.update_status(response, status.id)
+			return
+
 		#print(status.user.screen_name)
 		#Populate the dictionary of prefixes and suffixes
 		word_dict_prefix_one = populate_dictionary_prefix_one(api.user_timeline(id=user.id, count=5000))
@@ -20,6 +26,7 @@ class SL(tweepy.StreamListener):
 
 #Define stream starting function
 def start_stream():
+	print("Starting...")
 	while True:
 		try:
 			#Create stream listener and subsequently create stream
