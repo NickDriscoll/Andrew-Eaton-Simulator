@@ -11,18 +11,18 @@ uID = 332088556
 class SL(tweepy.StreamListener):
 	def on_status(self, status):
 		#RATTLESNAKE RATTLESNAKE
-		if "rattlesnake" in status.text:
+		if "rattlesnake" in status.text.lower():
 			response = "@" + status.user.screen_name + " rattlesnake"
 			api.update_status(response, status.id)
-			return
-
-		#print(status.user.screen_name)
-		#Populate the dictionary of prefixes and suffixes
-		word_dict_prefix_one = populate_dictionary_prefix_one(api.user_timeline(id=user.id, count=5000))
-		response = "@" + status.user.screen_name + " " + markov_prefix_length_one(word_dict_prefix_one, 5)
-		print(response)
-		print("In response to " + str(status.id))
-		api.update_status(response, status.id)
+		else:
+			#print(status.user.screen_name)
+			#Populate the dictionary of prefixes and suffixes
+			word_dict_prefix_one = populate_dictionary_prefix_one(api.user_timeline(id=user.id, count=5000))
+			response = "@" + status.user.screen_name + " " + markov_prefix_length_one(word_dict_prefix_one, 5)
+			print(response)
+			print("In response to " + str(status.id))
+			api.update_status(response, status.id)
+		print("Responded to @" + status.user.screen_name)
 
 #Define stream starting function
 def start_stream():
